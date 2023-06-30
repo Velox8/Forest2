@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				activeSection.classList.add('active');
 			}
 
+
 			if (
 				window.innerHeight + window.scrollY >=
 				document.body.offsetHeight - 200
