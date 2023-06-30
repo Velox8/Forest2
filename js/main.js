@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	const scrollSpySections = document.querySelectorAll('.section');
 	const faSolid = document.querySelector('.fa-tree');
 
+	
+
+
+	
+	function disableScroll(event) {
+	  event.preventDefault();
+	}
+	
+	
+
+
+
 	const handleScrollSpy = () => {
 		const sections = [];
 
@@ -35,9 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	};
-
+	
 
 	window.addEventListener('scroll', handleScrollSpy);
+	navBar.addEventListener('touchmove', disableScroll, { passive: false });
+	navBar.addEventListener('wheel', disableScroll, { passive: false });
 
 	const addActive = () => {
 		navBar.classList.toggle('nav-mobile-active');

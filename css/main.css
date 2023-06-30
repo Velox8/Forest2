@@ -62,7 +62,6 @@
 .contact .contact-container .contact-boxes .contact-box .fa-solid {
 	font-size: 1.5rem;
 	color: white;
-  
 }
 .contact .contact-container .contact-boxes .contact-box .fa-brands {
 	margin-top: 1em;
@@ -85,7 +84,8 @@
 	background-color: white;
 	overflow: hidden;
 	cursor: pointer;
-	z-index: 10;
+
+	z-index: 1;
 }
 .contact .contact-container .contactButton2::before {
 	background-color: rgba(186, 179, 179, 0.7960784314);
@@ -514,8 +514,10 @@ body {
 	width: 100%;
 	right: 800px;
 	list-style: none;
+
 	transition: transform 0.3s;
 	background-color: white;
+	overflow: hidden;
 	z-index: 20;
 }
 .nav-mobile .nav-bar2 .a {
@@ -525,6 +527,7 @@ body {
 	font-size: 2rem;
 	color: rgba(11, 11, 11, 0.8666666667);
 	text-decoration: none;
+  overflow: hidden;
 }
 
 .nav-mobile-active {
@@ -859,7 +862,7 @@ body {
 	}
 	.nav-desktop .fa-tree {
 		font-size: 2.1rem;
-    cursor: pointer;
+		cursor: pointer;
 	}
 	.nav-desktop .title {
 		text-decoration: none;
