@@ -122,16 +122,20 @@
         <form class="contact-form">
 
             <div class="contact-form-base">
-                <label for="name" class="contact-form-label">Imię i nazwisko:</label>
-                <input type="text" class="contact-form-input" id="name">
-
-                <label for="email" class="contact-form-label">Adres e-mail:</label>
-                <input type="text" id="email" class="contact-form-input">
-
-                <label for="msg" class="contact-form-label">Wiadomość:</label>
-                <textarea id="msg" class="contact-form-textarea"></textarea>
+                <label for="name" class="contact-form-label">Imię i
+                    nazwisko:</label>
+                <input type="text" class="contact-form-input" id="name" placeholder="Wpisz imię i nazwisko">
+                <p class="error-text"></p>
             </div>
-
+            <div class="contact-form-base">
+                <label for="email" class="contact-form-label">Adres e-mail:</label>
+                <input type="email" id="email" class="contact-form-input" placeholder="wpisz email">
+                <p class="error-text"></p>
+</div>
+<div class="contact-form-base">  <label for="msg" class="contact-form-label">Wiadomość:</label>
+                <textarea id="msg" class="contact-form-textarea" placeholder="Wpisz wiadomość"></textarea>
+                <p class="error-text"></p>
+</div>
             <button type="submit" class="contact-form-button boxButtonAnimation">Wyślij</button>
 
         </form>

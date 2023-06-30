@@ -134,7 +134,14 @@
 .about-us2 .about-us2-container .about-us2-box:hover {
 	color: rgb(44, 148, 44);
 }
+.error {
+  color: red;
+}
 
+.error-text {
+  font-size: 1rem;
+  
+}
 .contactForm .contact-form {
 	display: flex;
 	flex-direction: column;
@@ -182,6 +189,7 @@
 .contactForm .contact-form .contact-form-button {
 	align-self: center;
 	padding: 1em;
+  margin-top: 3em;
 	margin-bottom: 3em;
 	width: 100%;
 	max-width: 300px;

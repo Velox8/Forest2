@@ -6,18 +6,44 @@ document.addEventListener('DOMContentLoaded', function () {
 	const menuItems = document.querySelectorAll('.nav-item');
 	const scrollSpySections = document.querySelectorAll('.section');
 	const faSolid = document.querySelector('.fa-tree');
+	const sendBtn = document.querySelector('.contact-form-button ');
+	const userName = document.querySelector('#name');
+	const email = document.querySelector('#email');
+	const msgNew = document.querySelector('#msg');
 
-	
+	const showError = (input, msg) => {
+		// argument input przechowyje inputa
+		// argument msg przechowuje placeholder
+		const formBox = input.parentElement;
+		const errorMsg = formBox.querySelector('.error-text');
 
+		formBox.classList.add('error');
+		errorMsg.textContent = msg;
+	};
+	const clearError = (input) => {
+		const formBox = input.parentElement;
 
-	
+		const errorMsg = formBox.querySelector('.error-text');
+		formBox.classList.remove('error');
+		errorMsg.textContent = 'Wszystkiego Najlepszego EMIL!!!!!';
+	};
+	const checkForm = (input) => {
+		input.forEach((el) => {
+			if (el.value === '') {
+				showError(el, el.placeholder);
+			} else {
+				clearError(el);
+			}
+		});
+	};
+	sendBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		checkForm([userName, email, msgNew]);
+	});
+
 	function disableScroll(event) {
-	  event.preventDefault();
+		event.preventDefault();
 	}
-	
-	
-
-
 
 	const handleScrollSpy = () => {
 		const sections = [];
@@ -47,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	};
-	
 
 	window.addEventListener('scroll', handleScrollSpy);
 	navBar.addEventListener('touchmove', disableScroll, { passive: false });
@@ -67,9 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	handleCurrentYear();
 
-	faSolid.addEventListener("click", function() {
-		window.location.href = "index.html#home";
-	
+	faSolid.addEventListener('click', function () {
+		window.location.href = 'index.html#home';
 	});
 	burgerBtn.addEventListener('click', addActive);
 	navItem.forEach((item) => {
