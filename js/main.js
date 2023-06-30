@@ -59,7 +59,7 @@ for (let i = 0; i < buttons.length; i++) {
 		const sections = [];
 
 		scrollSpySections.forEach((section) => {
-			if (window.scrollY <= section.offsetTop + section.offsetHeight - 100) {
+			if (window.scrollY <= section.offsetTop + section.offsetHeight - 100) { 
 				sections.push(section);
 
 				const activeSection = document.querySelector(
