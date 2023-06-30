@@ -1,25 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
+	
 	const burgerBtn = document.querySelector('.burger');
+
 	const navBar = document.querySelector('.nav-mobile');
 	const footerYear = document.querySelector('.footer-year');
 	const navItem = document.querySelectorAll('.a');
 	const menuItems = document.querySelectorAll('.nav-item');
 	const scrollSpySections = document.querySelectorAll('.section');
 	const faSolid = document.querySelector('.fa-tree');
-	const sendBtn = document.querySelector('.contact-form-button');
 	const userName = document.querySelector('#name');
 	const email = document.querySelector('#email');
 	const msgNew = document.querySelector('#msg');
-	
+
 	const showError = (input, msg) => {
 		// argument input przechowyje inputa
 		// argument msg przechowuje placeholder
 		const formBox = input.parentElement;
 		const errorMsg = formBox.querySelector('.error-text');
-
+		
 		formBox.classList.add('error');
 		errorMsg.textContent = msg;
 	};
+	
 	const clearError = (input) => {
 		const formBox = input.parentElement;
 		
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		formBox.classList.remove('error');
 		errorMsg.textContent = 'Wszystkiego Najlepszego EMIL!!!!!';
 	};
+	
 	const checkForm = (input) => {
 		input.forEach((el) => {
 			if (el.value === '') {
@@ -35,13 +38,19 @@ document.addEventListener('DOMContentLoaded', function () {
 				clearError(el);
 			}
 		});
-		sendBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			checkForm([userName, email, msgNew]); 
-	});
 	};
-	
 
+
+
+	
+	const buttons = document.getElementsByClassName('contact-form-button');
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    checkForm([userName, email, msgNew]);
+  });
+}
 	function disableScroll(event) {
 		event.preventDefault();
 	}
@@ -62,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				activeSection.classList.add('active');
 			}
 
-
 			if (
 				window.innerHeight + window.scrollY >=
 				document.body.offsetHeight - 200
@@ -79,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	window.addEventListener('scroll', handleScrollSpy);
 	navBar.addEventListener('touchmove', disableScroll, { passive: false });
 	navBar.addEventListener('wheel', disableScroll, { passive: false });
+	
 
 	const addActive = () => {
 		navBar.classList.toggle('nav-mobile-active');
