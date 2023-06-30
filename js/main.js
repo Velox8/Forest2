@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const userName = document.querySelector('#name');
 	const email = document.querySelector('#email');
 	const msgNew = document.querySelector('#msg');
-
+	
 	const showError = (input, msg) => {
 		// argument input przechowyje inputa
 		// argument msg przechowuje placeholder
@@ -20,13 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		formBox.classList.add('error');
 		errorMsg.textContent = msg;
 	};
-	sendBtn.addEventListener('click', (e) => {
-		e.preventDefault();
-		checkForm([userName, email, msgNew]);
-	});
 	const clearError = (input) => {
 		const formBox = input.parentElement;
-
+		
 		const errorMsg = formBox.querySelector('.error-text');
 		formBox.classList.remove('error');
 		errorMsg.textContent = 'Wszystkiego Najlepszego EMIL!!!!!';
@@ -39,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				clearError(el);
 			}
 		});
+		sendBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			checkForm([userName, email, msgNew]); 
+	});
 	};
 	
 
